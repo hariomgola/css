@@ -61,12 +61,12 @@ body {
   width: auto;
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: #fafafa;
+  background-color: #000000;
   text-align: inherit;
 }
 
 #pre pre {
-  color: black;
+  color: #1ff042;
 }
 
 /* Style for Vertical Tab End */

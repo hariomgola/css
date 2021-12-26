@@ -200,11 +200,43 @@ const _demo = () => {
 };
 
 /**
+ * Creating the land-up page
+ */
+const _landupContent = (content) => {
+  let _main = document.getElementsByClassName("main")[0];
+  let _div = document.createElement("div");
+  _div.id = content;
+  _div.className = "maincontent";
+  let _h1 = document.createElement("h1");
+  _h1.id = "CSS";
+  let _ndiv = document.createElement("div");
+  _ndiv.style =
+    "text-align: center; background-color: #404040; overflow: hidden;";
+  _ndiv.id = "logo";
+  _ndiv.innerHTML = `
+  <svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="94vh" height="94vh">
+    <path class="path" stroke="#f7df1d" stroke-width="0.6" stroke-linejoin="round" stroke-linecap="round"
+      stroke-miterlimit="10" stroke-dasharray="132" stroke-dashoffset="132" fill="#404040"
+      d="M 39 40 L 25 44 L 11 40 L 8 6 L 42 6 C 41 17.332031 40 28.667969 39 40 Z M 39.816406 8 L 10.183594 8 L 12.871094 38.453125 L 25 41.921875 L 37.128906 38.453125 Z" />
+    <path class="path" stroke="#f7df1d" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"
+      stroke-miterlimit="10" stroke-dasharray="125" stroke-dashoffset="125" fill="#404040"
+      d="M 16.800781 28 L 20.800781 28 L 20.898438 30.5 L 25 31.898438 L 29.101563 30.5 L 29.398438 26 L 20.601563 26 L 20.398438 22 L 29.601563 22 L 29.898438 18 L 16.101563 18 L 15.800781 14 L 34.101563 14 L 33.601563 22 L 32.898438 33.5 L 25 36.101563 L 17.101563 33.5 Z" />
+  </svg>
+  `;
+  // Implementing children node
+  _main.appendChild(_div);
+  document.getElementsByClassName("maincontent")[0].appendChild(_h1);
+  document.getElementById("CSS").appendChild(_ndiv);
+};
+
+/**
  * Rendering main content
  */
 const _mainContentRendered = (content) => {
   // Switching condition by rendering the HTML
-  if (content == "Introduction to css") {
+  if (content == "CSS Notes") {
+    _landupContent(content);
+  } else if (content == "Introduction to css") {
     let _main = document.getElementsByClassName("main")[0];
     let _div = document.createElement("div");
     _div.id = content;
@@ -297,6 +329,7 @@ const _createNavigation = () => {
 
   // storing the side scroll value
   const _navMenu = [
+    "CSS Notes",
     "Introduction to css",
     "css selector",
     "Advance css selector",
@@ -368,6 +401,7 @@ const _copyright = () => {
 const startApplication = () => {
   _startupApplication();
   setTimeout(() => {
+    _landupContent();
     _createNavigation();
     _copyright();
   }, 10);
