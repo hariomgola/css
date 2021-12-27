@@ -1,3 +1,4 @@
+/* Created and developed by @hari from scractch to production */
 /* Adding for full html */
 * {
   margin: 0;
@@ -46,7 +47,7 @@ body {
   border-left: none;
 }
 #heading {
-  font-family: "Faster One", cursive;
+  font-family: 'Shizuru', cursive;
   text-align: center;
   height: 5vh;
   font-size: 3vh;
@@ -118,10 +119,36 @@ body {
   height: 5vh;
   background-color: #000000;
   color: white;
+  text-align: center;
 }
 
 .copyrightline {
+  font-family: 'Patrick Hand', cursive;
+  display: inline-block;
   font-size: 2vh;
   padding: 0.8vh;
   text-align: center;
+  color: #1ff042;
+  letter-spacing: 2px;
 }
+
+.cursor {
+  display: inline-block;
+  vertical-align: middle;
+  width: 3px;
+  height: 2vh;
+  background-color: #1ff042;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  from,
+  to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: #1ff042;
+  }
+}
+
+/* Created and developed by @hari from scractch to production */
