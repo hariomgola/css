@@ -6,6 +6,7 @@ import {
   cssAdvanceSelector,
   visualRules,
   boxModel,
+  changingboxModel,
 } from "./notes";
 
 const notesRender = () => {
@@ -39,6 +40,11 @@ const notesRender = () => {
       id: "c5",
       name: "Box Model",
       fname: boxModel,
+    },
+    {
+      id: "c6",
+      name: "Change Box Model",
+      fname: changingboxModel,
     },
   ];
   return _notesMapping;

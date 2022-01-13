@@ -15,7 +15,7 @@ const Logo = () => {
       >
         <path
           className="path"
-          stroke="#f7df1d"
+          stroke="#7f7fd5"
           strokeWidth="0.6"
           strokeLinejoin="round"
           strokeLinecap="round"
@@ -27,7 +27,7 @@ const Logo = () => {
         />
         <path
           className="path"
-          stroke="#f7df1d"
+          stroke="#7f7fd5"
           strokeWidth="1"
           strokeLinejoin="round"
           strokeLinecap="round"

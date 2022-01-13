@@ -34,6 +34,8 @@ const introductionToCSS = () => {
     - href — like the anchor element, the value of this attribute must be the address, or path, to the CSS file.
     - rel — this attribute describes the relationship between the HTML file and the CSS file.
     - Because you are linking to a stylesheet, the value should be set to stylesheet.
+
+
       `;
   return <pre>{c1}</pre>;
 };
@@ -76,6 +78,8 @@ const cssSelector = () => {
       a[href*='beijing'] {
       color: lightblue;
       }
+
+
       `;
   return <pre>{c2}</pre>;
 };
@@ -138,6 +142,7 @@ const cssAdvanceSelector = () => {
         font-family:Georgia
       }
   
+
     `;
   return <pre>{c3}</pre>;
 };
@@ -189,13 +194,175 @@ const visualRules = () => {
     - It will override any style no matter how specific it is.
     - As a result, it should almost never be used. Once !important is used,its really hard to override.
     - p {color: blue!important}
+
+
       `;
   return <pre>{c4}</pre>;
 };
 
 const boxModel = () => {
-  let c5 = ``;
+  let c5 = `
+  # Box Model Property
+    - The box model comprises the set of properties that define part of an element that take up space on a web page.
+    - The model includes the content ares's size (height and width) and the element's padding, border, and margin.
+      ~ width and height  - the height and width of the content area
+      ~ Padding           - the amount of space between the content area and the boarder
+      ~ border            - the thickness and style of border surrounding the content ares and padding.
+      ~ margin            - the amount of space between the border and the outside edge of the element.
+      
+                   _____________________________________________
+                  |                   Margin                    |
+                  |     ___________________________________     |
+                  |    |             border                |    |
+                  |    |     __________________________    |    |
+                  |    |    |        padding           |   |    |
+                  |    |    |     ______________       |   |    |
+                  |    |    |    |    content   |      |   |    |
+                  |    |    |    |______________|      |   |    |
+                  |    |    |__________________________|   |    |
+                  |    |___________________________________|    |
+                  |_____________________________________________|
+  
+  # Height and width
+    - An element in html content has two dimension: a height and a width.
+    - height and width can be modifies using below property.
+        p{
+          height:80px;
+          width:220px;
+        }
+
+  # Border
+    - A boarder is a line or the space that surrounds the element, like a frame around painting.
+    - boarder can be set with specific width, style and color.
+      ~ width - The thickness of the border. A border's thickness can be set in pixel or with (thin,medium,thick).
+      ~ Style - The border can be designed as you want.(https://developer.mozilla.org/en-US/docs/Web/CSS/border-style#values)
+      ~ Color - The border color can be changed according to the need. (https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
+          p.content-header {                               p {
+            height: 80px;                                    border: 3px solid coral;
+            width: 240px;                                  }
+            border: solid coral;
+          }
+
+  # Border Radius
+    - With the help of boader Radius we can modify the boarder of the box.
+       .container {
+         border: 3px solid blue;
+         border-radius: 5px;
+       }
+  
+  # Padding
+    - The space between the content of a box and the border of a box is known as padding.
+      .container {
+        border: 3px solid coral;
+        padding: 10px;
+      }
+    - The padding property is often used to expand the background color and makes the content look less cramped.
+    - If you want to be more specific about the amount of passing on each side of a box's content. below property is used.
+       ~ padding-top
+       ~ padding-right
+       ~ padding-bottom
+       ~ padding left
+
+  # Padding shorthand
+    - Instead of using each side we can assign directly
+      .container {
+        padding: 6px 11px 4px 9px;  // top right bottom left (run in clockwise direction)
+      }
+    - if the padding of left and right side content is equal, we can use shorthand property as 3 value only
+      .container {
+        padding: 5px 10px 20px; // 
+      }
+    - if the top and bottom are equal and right and left is equal, we can use shorthand property as 2 value.
+      .container {
+        padding: 5px 10px;
+      }
+
+  # Margin
+    - So far we have learnt about content, border and passing.
+    - Marging is the last and forth component in box model.
+    - Margin refers to the space directly outside the box. The margin property is used to specify the size of this space.
+      p {
+        border: 1px solid orange;
+        margin: 20px;
+      }
+    - Again the margin also has four property simmilar to padding.
+      ~ margin-top
+      ~ margin-right
+      ~ margin-bottom
+      ~ margin-left
+
+  # Margin Shorthand
+    - Margin shorthand is simmilar to the padding shorthand.
+
+  # Auto
+    - The margin property also lets you centre content.
+      div.headline{
+        width: 400px;
+        margin: 0 auto;
+      }
+
+    - In above example margin:1 auto value instructs the browser to adjust the left and right margin.
+    - Until the element is centred within its containing element.
+    - In order to centre an element, a width must be set fo thet element. 
+    - Otherwise, the width of the div will be automatically set to the full width of its containing element.
+
+  # Margin Collapse
+    - Margin collapse is a term where the margin of 2 element can overlay each other.
+    - Margin Collapse occur only in top and bottom.
+    - Margin collapse doen't work for left and right. It simply adds up.
+       .img-one{                               .img-one {
+         margin-right: 20px                       margin-bottom: 30px;
+       }                                        }
+       .img-two{                               .img-two {
+         margin-left: 20px                        margin-top: 20px
+       }                                        }
+
+       efficient margin - 40px                  efficient margin - 30px
+
+  # Minimum and Maximum height and width
+    - min-width: 300px - this property ensures a minimum width of an element's box.
+    - max-width: 600px - this property ensures a maximum width of an element's box.
+    - min-height: 150px - this property ensures a minimum height for an element's box.
+    - max-height: 300px - this property ensures a maximum height of an element's box.
+
+  # Overflow
+    - All component in box model comprises an element's size. must have some overflow content.
+    - The overflow property controls what happend to content that spilla, or overflows, outside its box.
+      ~ hidden - When set to this value, any content that overflows will be hidden from view.
+      ~ scroll - When set to this value, a scrollbar will be added to the element's box so that rest content is visible.
+      ~ visible - When set to this value, the overflow content will be displayed outside of the containing element.
+      
+    - We can also set the overflow property to x and y axis.
+
+  # Resetting default
+    - All major web browser have a default stylesheet they use in the absence of an external stylesheet.
+    - The default stylesheets are known as user agent stylesheets.
+    - User agent stylesheet often have default css rules that sets defauklt value of padding and margin.
+    - This affects how the browser displays HTML elements, which can make it difficult for a developer.
+    - its a good practise to reset that default value
+       * {
+         margin: 0;
+         padding: 0;
+       }
+
+  # Visibility
+    - Elements can be hidden from view with the visibility propert
+      ~ hidden - hides an elements.
+      ~ visible - displays an elements.
+      ~ collapse - collapses and elements.
+      ~ none - complety remove the elements.
+
+    - Note - the main difference bw none and hidden is that none will complety removed from the webpage.
+           - How ever the hidden will not be visible on webpage. but it has the space reserved for it.
+
+           
+  `;
   return <pre>{c5}</pre>;
+};
+
+const changingboxModel = () => {
+  let c6 = ``;
+  return <pre>{c6}</pre>;
 };
 
 export {
@@ -205,4 +372,5 @@ export {
   cssAdvanceSelector,
   visualRules,
   boxModel,
+  changingboxModel,
 };
