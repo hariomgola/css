@@ -355,13 +355,23 @@ const boxModel = () => {
     - Note - the main difference bw none and hidden is that none will complety removed from the webpage.
            - How ever the hidden will not be visible on webpage. but it has the space reserved for it.
 
-           
+
   `;
   return <pre>{c5}</pre>;
 };
 
 const changingboxModel = () => {
-  let c6 = ``;
+  let c6 = `
+  # Change Box Model
+    - In box model we have learnt how we change the box model: box dimension, borders, padding and margin.
+    - How ever the box model, has an awkward limitation regarding box dimension.
+       <h1>Hello World</h1>             h1 {
+                                          border: 1px solid black;
+                                          height: 200px;
+                                          width: 300px;
+                                          padding: 10px;
+                                        }
+  `;
   return <pre>{c6}</pre>;
 };
 
