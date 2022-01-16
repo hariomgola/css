@@ -7,6 +7,7 @@ import {
   visualRules,
   boxModel,
   changingboxModel,
+  displayandPositioning,
 } from "./notes";
 
 const notesRender = () => {
@@ -45,6 +46,11 @@ const notesRender = () => {
       id: "c6",
       name: "Change Box Model",
       fname: changingboxModel,
+    },
+    {
+      id: "c7",
+      name: "Display and Positioning",
+      fname: displayandPositioning,
     },
   ];
   return _notesMapping;

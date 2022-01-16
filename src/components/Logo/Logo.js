@@ -7,15 +7,18 @@ const Logo = () => {
   return (
     <div className="logo">
       <svg
+        aria-hidden="true"
+        focusable="false"
+        align="centre"
         fill="#000000"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 50 50"
-        width="94vh"
-        height="94vh"
+        width="85vw"
+        height="90vh"
       >
         <path
           className="path"
-          stroke="#7f7fd5"
+          stroke="#f7971e"
           strokeWidth="0.6"
           strokeLinejoin="round"
           strokeLinecap="round"
@@ -27,7 +30,7 @@ const Logo = () => {
         />
         <path
           className="path"
-          stroke="#7f7fd5"
+          stroke="#f7971e"
           strokeWidth="1"
           strokeLinejoin="round"
           strokeLinecap="round"
