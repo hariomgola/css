@@ -413,7 +413,65 @@ const changingboxModel = () => {
 };
 
 const displayandPositioning = () => {
-  let c7 = ``;
+  let c7 = `
+  # Flow of HTML
+    - A browser will render the element of an HTML document that has no CSS from left to right, top to bottom,
+    - In the same order as they exist in the document. This is called the flow of elements in HTML.
+    - In Addition to the properties that it provided to style HTML elemnts, CSS included property that chnages how the browser positions elements.
+    - These properties specify where an element is located on page, if the element can share lines with other elements, and other related attributes.
+    - We are going to learn below property that will allow us to position and view elements on a web page.
+    - These property can be used in conjunction with any other styling properties you may know.
+        ~ position
+        ~ display
+        ~ z-index
+        ~ float
+        ~ clear
+
+  # Position
+   - Block level elemnt like <div> create a block the full width of there parenr element from apperaing in the same horizontal space.
+   - You can also see that block-level elements also consistently appear on the left side of the browser. (default)
+   - The default position of an element can be changes by setting its position property.
+       ~ static (default value doesn't need to specify again)
+       ~ relative
+       ~ absolute
+       ~ fixed
+       ~ sticky
+
+  # Position: Relative
+   - One way to modify the default position of an element is by setting its position property to relative.
+   - This value allows you to position an element relative to its default static position on the web page.
+   - Allthought we have specified position to relative but we have to specify the position.
+   - This is done by accompanying the position decalaration with one or more below offset property
+      ~ top - moves the element down from the top.
+      ~ bottom - moves the element up from the bottom.
+      ~ left - moves the element away from the left side (to the right)
+      ~ right - moves the element away from the right side (to the left)
+           .box {
+             background-color: green;
+             position: relative;
+             top: 50px;
+             left: 120px;
+           }
+  
+  # Position: Absolute
+   - Another way of modifying the position of an element is by setting its position to absolute.
+   - When an element's position is set to absolute, 
+   - all other elements on the page will ignore the and act like it is not present present on the page
+   - The element wil be positioned relative to its closest 
+   - While offset properties can be used to determine the final position from there.
+   
+  # Position: fixed
+   - When we fix an element to a specific position on the page(regardless fo user scrolling) by setting its position to fixed.
+   - Property such as top,bottom,left,right will specify the partiucular position of fixed element.
+            .title {
+             position: fixed;
+             top: 0px;
+             left: 0px;
+           }
+
+  # 
+  
+  `;
   return <pre>{c7}</pre>;
 };
 
