@@ -469,8 +469,43 @@ const displayandPositioning = () => {
              left: 0px;
            }
 
-  # 
-  
+  # Position: Sticky
+   - The sticky value in another position value that keeps an element in the document flow as the user scrolls.
+   - But sticks to a specified position as the user scrolls, but sticks to a specific position as the page is scrolled further.
+   - This is done by using the sticky value along with the familiar offset property.
+
+  # Z-index
+   - When boxes on a web page have a  combination of different positions, the boxes can overlap with each other making the content difficult to read.
+   - The z-index property controls how far back or how far forward an element should appear on the web page when element overlap.
+   - This can be thought of as the depth of elements, with deeper elements appearing behind shallower elements.
+   - Zindex have the value 0,1 and z index doesn't works on static element.
+
+  # Inline Display
+   - Every HTML Element has a default display value that dictates if it can share horizontal space with other elements.
+   - Some elements fill the entire browser from left to rght regardless of the size of their content.
+   - Other element only take up as much horizontal space as their content requires and can be directly next to other elements.
+   - We will learn mainly about 3 display property
+      ~ inline
+      ~ block
+      ~ inline-block
+   - The default display for some elements, such as <em>, <strong>, and <a> is called inline.
+   - Inline element have a box that wraps tight around their content,
+   - only taking up the amount of space necessary to display their content and not requiring a new line after each element.
+   - The height and width of these element cannot be specified in the CSS document.
+   - For example, the text of an anchor tag (<a>) wil, by default, be displayed on the same line as the surrounding text, and it will only be as wide as necessary to certain its content. 
+
+  # Display: Inline
+   - Inline elements cannot be altered in size with height and width css properties. 
+       ->  To learn more about <em>inline</em> elements, read <a href="#">MDN documentation</a>. 
+   - In above example, the <em> element is inline, beacuse it displays its content on the same line as the content surrounding it,
+   - Includes the anchor tag also. 
+
+  # Display: Block
+   - Some element are not displayed in the same line as the content around then. These are called block-level elements.
+   - These elements fill the entire width of the page by default, but their width proeprty can also be set.
+   - Unless otherwise specified, They are the height necessary to accommodate their content.
+   - Elements that are block level by default include all levels of heading elements
+   - <h1> to <h6>,<p>,<div> and <fotter>
   `;
   return <pre>{c7}</pre>;
 };
